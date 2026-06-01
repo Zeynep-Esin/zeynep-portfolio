@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Eğitimler</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!--! header section start  -->
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/sohbet2.jpg" alt="logo" />
+      </a>
+      <nav class="navbar"> 
+        <a href="index.html" >Anasayfa</a>
+        <a href="hakkında.html">Hakkımızda</a>
+        <a href="etkinlikler.html">Etkinlikler</a>
+        <a href="eğitimler.html" class="active">Eğitimler</a> 
+        <a href="güncel.html">Güncel</a>
+        <a href="bloglar.html">Bloglar</a>
+      </nav>
+
+      <div class="buttons">
+        <button id="search-btn" onclick="toggleSearchForm()">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="search-form" id="search-form">
+        <input
+          type="text"
+          class="search-input"
+          id="search-box"
+          placeholder="Search here" />
+        <button onclick="searchFunction()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+    <!--! header section end  -->
+
+    <!--! eğitim section start  -->
+    <section class="egitim" id="egitim">
+      <h1 class="heading">EĞİTİMLER</h1>
+      <div class="box-container">
+        <div class="box">
+          <div class="box-head">
+            <img src="images/kitaplık.jpg" alt="kitaplık" />
+            <h3>Usûl Kitapları</h3>
+            <div><p style="font-size: 17px;"> *Emsile<br> *Avâmil<br>
+                *Cürcani<br>
+                <span class="dots"> ...</span>
+                <span class="moreText"> *Bina <br> *İzzi<br>
+                  *Birgevi</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Usul.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/ayet.jpg" alt="ayet" />
+            <h3>Arapça</h3>
+            <div><p style="font-size: 17px;"> * Modern Arapça<br> *Klasik
+                Arapça<br> *Arapça Grammer<br><span class="dots"> ...</span>
+                <span class="moreText"> *Îrab Dersleri</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Arapça.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/ilimler.jpg" alt="ders" />
+            <h3>İslami İlimler</h3>
+            <div> <p style="font-size: 17px;"> *Hadis okumaları<br> *Fıkıh
+                (Hanefi- Şâfi)<br> *Nesefi Akâidi<br><span class="dots">
+                  ...</span>
+                <span class="moreText"> *Asr-ı Saadetten Günümüze Siyer
+                  Okumaları<br>*Tefsir Okumaları + Kırık Meal<br>
+                  *Talimü'l-Müteallim(İslam Ahlakı)<br> *Tarihe Yön Veren
+                  Şahsiyetler</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="islamilimler.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/hat.jpg" alt="hat" />
+            <h3>Kur'ân-ı Kerîm</h3>
+            <div><p style="font-size: 17px;"> *Sûre Ezberi<br> *Okuma<br>
+                *Tecvid Kuralları<br><span class="dots"> ...</span>
+                <span class="moreText"> *Mahrec Dersleri</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Kuran.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--! eğitim section end  -->
+
+    <!--! footer section start  -->
+    <section class="footer">
+      <div class="share">
+        <a href="https://www.twitter.com/bizdusu" class="fab fa-twitter"></a>
+        <a href="https://www.instagram.com/bizdusu" class="fab fa-instagram"></a>
+        <a href="mihrabmedresesi@gmail.com" class="fab fa-envelope"></a>
+        <a href="" class="fab fa-pinterest"></a>
+      </div>
+      <div class="credit">
+        Mihrab Akademi | 2019-2025<br>mihrabakademi.com altında yayınlanan yazıların tüm hakları saklıdır.
+      </div>
+    </section>
+    <!--! footer section end  -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

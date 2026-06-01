@@ -1,0 +1,1362 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root {
+  --main-color:  rgba(71, 39, 11, 0.621);
+  --black-color: rgba(61, 40, 17, 0.785);
+  --border: 0.1rem solid rgba(139, 112, 112, 0.4);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: none;
+  transition: 0.2s ease;
+}
+
+/*! base html codes  */
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: white;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: var(--black-color);
+}
+
+body {
+  background-color: var(--main-color);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3.5rem 7%;
+}
+
+a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  color:whitesmoke;
+  background-color:var(--main-color);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color:#8a7651;
+}
+
+.heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 0.1rem solid #fff;
+}
+
+.search-input {
+  font-size: 1.6rem;
+  color: var(--black-color);
+  padding: 1rem;
+  text-transform: none;
+  border-radius: 3rem;
+}
+
+/*! header start  */
+.search-form {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 320px; /* Formun genişliği */
+  overflow: hidden;
+}
+
+.search-form.active {
+  display: block !important;
+}
+
+/* Arama input'unun stili*/
+.search-input {
+  width: 80%; /* Input genişliği, butonla uyumlu olması için */
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  height: 40px;
+  position: relative;
+  padding-right: 40px; /* İkonun sağda görünmesi için boşluk */
+}
+
+/* Arama simgesini input ile aynı hizada tutmak için */
+.search-input + button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Arama butonunun hover durumunu ayarlıyoruz */
+.search-input + button:hover {
+  color: #272d2d;
+}
+
+.search-form button {
+  padding: 0.6rem 1rem;
+  color: #0d0d0e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.search-form button:hover {
+ color: #2f3031;
+}
+
+/* Arama butonunun formun içine yerleşmesi */
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#search-btn {
+  padding: 0.6rem 1rem;
+  color: #0c0d0e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#search-btn:hover {
+ color: #292b2d;
+}
+
+/* Header logo ayarları */
+.header .logo img {
+  height: auto;           /* Yüksekliği oranlı tut */
+  width: 100%;            /* Genişliği %100 yap */
+  max-width: 100px;       /* Logo için maksimum genişlik */
+  padding: 0 7%;          /* Kenarlara boşluk bırak */
+  margin: auto;           /* Ortalamak için margin: auto kullan */
+  display: block;         /* logo'yu blok eleman yap */
+  border-radius: 20%;     /* Kenarları yuvarla, yuvarlak bir logo efekti */
+  box-shadow: 0 1px 1px #b3a692;  /* Hafif gölge ekle */
+  transition: all 0.2s ease-in-out;  /* Yumuşak geçiş efekti */
+}
+
+/* Logo hover efekti */
+.header .logo img:hover {
+  transform: scale(1.05);  /* Logo hover üzerinde biraz büyüsün */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Hover'da gölgeyi belirginleştir */
+}
+
+.header {
+  background-color: #b3a692;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  margin: 2rem 7%;
+  border-radius: 30rem;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--black-color);
+  border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar .active,
+.header .navbar a:hover {
+  border-color: black;
+  border-width: 2px;
+  padding-bottom: 0.5rem;
+}
+
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  background-color: transparent;
+  color: var(--black-color);
+}
+
+.header .cart-items-container {
+  position: absolute;
+  top: 95%;
+  height: calc(100vh - 9rem);
+  width: 35rem;
+  background-color: #fff;
+  box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+  right: -100%;
+}
+
+.header .cart-items-container.active {
+  right: 3rem;
+}
+
+.header .cart-items-container .cart-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.header .cart-items-container .cart-item:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.header .cart-items-container .cart-item .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black-color);
+}
+
+.header .cart-items-container .cart-item img {
+  height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+  font-size: 2rem;
+  color: var(--black-color);
+  padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+  font-size: 1.5rem;
+  color: var(--black-color);
+}
+
+.header .cart-items-container .btn {
+  width: 100%;
+  text-align: center;
+  border-radius: unset;
+}
+
+.header #menu-btn {
+  display: none;
+}
+/*! header end  */
+
+/*! home start  */
+.home {
+  min-height: 110vh;
+  background: url(../images/arka.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -14.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.home .content {
+  max-width: 60rem;
+}
+
+.home .content h3 {
+  font-size: 6rem;
+  color: white;
+}
+
+.home .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5;
+  padding: 1rem 0;
+  color: white;
+}
+
+.slider-container {
+  position:absolute;/* Sağda sabit durması için */
+  top: 50%;
+  right: 49px; /* Sayfanın sağında durması için */
+  transform: translateY(-50%);
+  width: 408px; /* Çerçevenin genişliği */
+  height: 300px; /* Çerçevenin yüksekliği */
+  overflow: hidden;
+  border: 5px solid rgba(14, 7, 1, 0.445); /* Çerçeve rengi */
+  border-radius: 10px; /* Köşeleri yuvarlat */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.slides {
+  display: flex;
+  width: 400%; /* 4 resim olduğu için */
+  animation: slide 16s infinite; 
+  transition: transform 0.5s ease; 
+}
+
+.slide {
+  width: 100%;
+  object-fit: cover; /* Resimlerin tam oturmasını sağlar */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(0%); }
+  45% { transform: translateX(-100%);}
+  70% { transform: translateX(-200%);}
+  90% { transform: translateX(-300%);}
+}
+/*! home end  */
+
+/*! gundem start  */
+.gundem{
+  display: flex;
+  flex-direction: column;
+  justify-content:left,;
+  align-items:left;
+  height: 100vh;
+}
+
+.gundem .haber{
+  position: relative;
+  top: 40%; /* Dikeyde ortalamak için */
+  left: 50%; /* Yatayda ortalamak için */
+  transform: translate(-50%, -50%); /* Hem dikey hem de yatayda ortalamak için */
+  width: 600px; /* Çerçevenin genişliği */
+  height: 500px; /* Çerçevenin yüksekliği */
+  overflow: hidden;
+  border: 5px solid rgba(14, 7, 1, 0.445); /* Çerçeve rengi */
+  border-radius: 10px; /* Köşeleri yuvarlat */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.gundem .galeri {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gundem .galeri img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  opacity: 0; /* Başlangıçta tüm fotoğraflar görünmez */
+  transition: opacity 1s ease-in-out; /* Geçişi yumuşatmak için */
+}
+.gundem .prev, .gundem .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.gundem .prev {
+  left: 10px;
+}
+
+.gundem .next {
+  right: 10px;
+}
+
+
+.gundem .galeri img:nth-child(1) {
+  animation: slayt 20s infinite;
+}
+
+.gundem .galeri img:nth-child(2) {
+  animation: slayt 20s 5s infinite; /* 6 saniye gecikmeli geçiş */
+}
+
+.gundem .galeri img:nth-child(3) {
+  animation: slayt 20s 10s infinite; /* 12 saniye gecikmeli geçiş */
+}
+
+.gundem .galeri img:nth-child(4) {
+  animation: slayt 20s 15s infinite; /* 18 saniye gecikmeli geçiş */
+}
+
+@keyframes slayt {
+  0% {
+    opacity: 0; /* Başlangıçta görünmez */
+  }
+  20% {
+    opacity: 1; /* Fotoğraf tamamen görünür */
+  }
+  80% {
+    opacity: 1; /* Fotoğraf net görünür halde kalır */
+  }
+  100% {
+    opacity: 0; /* Fotoğraf tamamen kaybolur */
+  }
+}
+.gundem .foto {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gundem .galeri img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.gundem .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  z-index: 10;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.gundem .overlay.show {
+  opacity: 1;
+}
+
+.gundem .prev, .gundem .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.gundem .prev {
+  left: 10px;
+}
+
+.gundem .next {
+  right: 10px;
+}
+/*! gundem end  */
+
+/*! eğitimler start  */
+.egitim .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+}
+.egitim .btn{
+  margin-left: 2.5rem;
+}
+.egitim .box-container .box {
+  padding: 1.3rem;
+  margin: 1rem;
+  background-color: #b3a692;
+  border-radius: 3rem;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.egitim .box-container .box img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 15px;  /* Resimler için yuvarlatılmış köşeler */
+}
+
+.egitim .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.egitim .box-container .box .price {
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.egitim .box-container .box .price span {
+  font-size: 3rem;
+  text-decoration: line-through;
+  font-weight: 300;
+}
+
+.moreText {
+  display: none;
+}
+
+/* Media Queries - Mobil ve daha küçük ekranlar için düzenlemeler */
+@media (max-width: 1024px) {
+  .egitim .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.2rem;
+  }
+
+  .egitim .box-container .box {
+    padding: 1.5rem;
+    min-height: 200rem;
+  }
+
+  .egitim .box-container .box h3 {
+    font-size: 1.5rem;
+  }
+
+  .egitim .box-container .box .price {
+    font-size: 1rem;
+  }
+
+  .egitim .box-container .box .price span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .egitim .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+  }
+
+  .egitim .box-container .box {
+    padding: 1.5rem;
+    min-height: 30rem;
+  }
+
+  .egitim .box-container .box h3 {
+    font-size: 2rem;
+  }
+
+  .egitim .box-container .box .price {
+    font-size: 1.8rem;
+  }
+
+  .egitim .box-container .box .price span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .egitim .box-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .egitim .box-container .box {
+    padding: 1rem;
+    min-height: 20rem;
+  }
+
+  .egitim .box-container .box h3 {
+    font-size: 1.8rem;
+  }
+
+  .egitim .box-container .box .price {
+    font-size: 1.5rem;
+  }
+
+  .egitim .box-container .box .price span {
+    font-size: 1.6rem;
+  }
+}
+/*! eğitimler end  */
+
+/*! about start  */
+.hakkımızda .ross {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  height: 100vh;
+}
+
+.hakkımızda .ross .content {
+  flex: 1 1 45rem;
+}
+
+.hakkımızda .ross .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hakkımızda .ross .content p {
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+.hakkımızda .ross.image {
+  flex: 1 1 30rem;
+}
+
+.hakkımızda .ross img {
+  width: 100%;
+  border-radius: 8rem;
+}
+.hakkımızda .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+.hakkımızda .row .image {
+  flex: 1 1 30rem;
+}
+
+.hakkımızda .row img {
+  width: 100%;
+  border-radius: 8rem;
+}
+
+.hakkımızda .row .content {
+  flex: 1 1 45rem;
+}
+
+.hakkımızda .row .content h3 {
+  font-size: 2.7rem;
+  color: #fff;
+  margin: 1.5rem;
+}
+
+.hakkımızda .row .content p {
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+.hakkımızda .btn {
+  position: absolute;
+  display:flex;
+  justify-content:center;
+}
+/*! about end  */
+
+/*! etkinlik start  */
+.event-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content:center;
+  flex-wrap: wrap; /* Kartlar responsive olacak şekilde alt satıra geçebilir */
+  margin-top: 3rem;
+}
+
+.event-card {
+  position: relative;
+  width: 450px;  /* Kartın genişliği */
+  height: 250px; /* Kartın yüksekliği */
+  background-color: #3d1212;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+}
+
+.event-img {
+  width: 100%; /* Görsel kısmının genişliği */
+  height: 100%;
+  position: relative;
+}
+
+.event-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-details {
+  width: 100%; /* Yazı kısmının genişliği */
+  padding: 1.5rem;
+  text-align: left;
+  background-color: rgba(19, 9, 9, 0.753);  /* Arka planı daha şık yapıyoruz */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-details h3 {
+  font-size:2rem;
+  margin-bottom: 1rem;
+}
+
+.event-details p {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+
+.event-img img:nth-of-type(2) {
+  opacity: 0;
+}
+
+/*! etkinlik end  */
+
+/*! blog start  */
+.blog-item {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 10px;
+  align-items: center;
+  background: rgba(48, 42, 42, 0.39);
+  padding: 10px 0;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.blog-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-title {
+  font-size: 22px;
+  color: #f4f3f3;
+  margin-bottom: 10px;
+}
+
+.blog-summary {
+  font-size: 16px;
+  color: #faf6f6;
+  margin-bottom: 15px;
+}
+
+.blogs .btn {
+  align-self: start;
+  padding: 8px 16px;
+  border-radius: c;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  width: fit-content;
+}
+/*! blog end  */
+
+/*! usul kitapları start  */
+.usul-egitim-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color:var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.usul-egitim-area {
+  width: 100%;
+  max-width: 800px;
+  background:var(--main-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.usul-egitim-area:hover {
+  transform: scale(1.02);
+}
+
+.usul-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d2c9c9;
+  animation: fadeInDown 1s ease-in;
+}
+
+/* İçerik düzeni */
+.usul-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Yazı kısmı */
+.usul-text {
+  text-align: center;
+  font-size: large;
+}
+
+/* Yazı paragrafı */
+.usul-text p {
+  font-size: 2rem;
+  color: #d8d4d4;
+}
+
+/* Liste düzeni */
+.usul-text ul {
+  list-style: none;
+  size: 10px;
+  padding: 0;
+}
+
+.usul-text li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.usul-text li:hover {
+  background: #535c69a7;
+}
+
+/* Buton */
+.usul-btn {
+  display: inline-block;
+  background: #473535;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.usul-btn:hover {
+  background: #ae8282;
+}
+
+/* Fade animasyonu */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*! usul kitapları end  */
+
+/*! islami ilimler start  */
+.islami-egitim-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color:var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.islami-egitim-area {
+  width: 100%;
+  max-width: 800px;
+  background:var(--main-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.islami-egitim-area:hover {
+  transform: scale(1.02);
+}
+
+.islami-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d2c9c9;
+  animation: fadeInDown 1s ease-in;
+}
+
+/* İçerik düzeni */
+.islami-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Yazı kısmı */
+.islami-text {
+  text-align: center;
+  font-size: large;
+}
+
+/* Yazı paragrafı */
+.islami-text p {
+  font-size: 2rem;
+  color: #d8d4d4;
+}
+
+/* Liste düzeni */
+.islami-text ul {
+  list-style: none;
+  size: 10px;
+  padding: 0;
+}
+
+.islami-text li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.islami-text li:hover {
+  background: #535c69a7;
+}
+
+/* Buton */
+.islami-btn {
+  display: inline-block;
+  background: #473535;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.islami-btn:hover {
+  background: #ae8282;
+}
+
+/* Fade animasyonu */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*! islami ilimler end  */
+
+/*! arapça  start  */
+.arapca-egitim-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color:var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.arapca-egitim-area {
+  width: 100%;
+  max-width: 800px;
+  background:var(--main-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.arapca-egitim-area:hover {
+  transform: scale(1.02);
+}
+
+.arapca-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d2c9c9;
+  animation: fadeInDown 1s ease-in;
+}
+
+/* İçerik düzeni */
+.arapca-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Yazı kısmı */
+.arapca-text {
+  text-align: center;
+  font-size: large;
+}
+
+/* Yazı paragrafı */
+.arapca-text p {
+  font-size: 2rem;
+  color: #d8d4d4;
+}
+
+/* Liste düzeni */
+.arapca-text ul {
+  list-style: none;
+  size: 10px;
+  padding: 0;
+}
+
+.arapca-text li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.arapca-text li:hover {
+  background: #535c69a7;
+}
+
+/* Buton */
+.arapca-btn {
+  display: inline-block;
+  background: #473535;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.arapca-btn:hover {
+  background: #ae8282;
+}
+
+/* Fade animasyonu */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*! arapca end  */
+
+/*! kuran  start  */
+.kuran-egitim-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color:var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.kuran-egitim-area {
+  width: 100%;
+  max-width: 800px;
+  background:var(--main-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.kuran-egitim-area:hover {
+  transform: scale(1.02);
+}
+
+.kuran-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d2c9c9;
+  animation: fadeInDown 1s ease-in;
+}
+
+/* İçerik düzeni */
+.kuran-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Yazı kısmı */
+.kuran-text {
+  text-align: center;
+  font-size: large;
+}
+
+/* Yazı paragrafı */
+.kuran-text p {
+  font-size: 2rem;
+  color: #d8d4d4;
+}
+
+/* Liste düzeni */
+.kuran-text ul {
+  list-style: none;
+  size: 10px;
+  padding: 0;
+}
+
+.kuran-text li {
+  background: #eee;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.kuran-text li:hover {
+  background: #535c69a7;
+}
+
+/* Buton */
+.kuran-btn {
+  display: inline-block;
+  background: #473535;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.kuran-btn:hover {
+  background: #ae8282;
+}
+
+/* Fade animasyonu */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*! kuran end  */
+
+
+/*! footer start  */
+.footer {
+  background-color: var(--black-color);
+  text-align: center;
+}
+
+.footer .search .btn-primary {
+  background-color:#111010;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  height: 35vh;
+}
+
+.footer .share {
+  padding: 2rem 0;
+}
+
+.footer .share a {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  color: #fff;
+  font-size: 2rem;
+  border: var(--border);
+  border-radius: 50%;
+  margin: 0.3rem;
+}
+
+.footer .share a:hover {
+  background-color:#8a7651;
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer .links a {
+  background-color: var(--main-color);
+  padding: 0.7rem 2rem;
+  color: #fff;
+  font-size: 2rem;
+  border: var(--border);
+}
+
+.footer .links a:hover {
+  background-color: var(--black-color);
+  opacity: 0.7;
+}
+
+.footer .links a.active {
+  background-color: var(--black-color);
+}
+
+.footer .credit {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+/*! footer end  */
+
+/*! responsive start  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .header .logo img {
+    height: 7rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  .products .box-container .box .box-head .name {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 95%;
+    background-color: #fff;
+    height: calc(100vh - 9rem);
+    width: 30rem;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+    right: -100%;
+  }
+
+  .header .navbar.active {
+    right: 3rem;
+  }
+
+  .header .navbar a {
+    color: var(--black-color);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header .search-form {
+    width: 30rem;
+  }
+}
+/*! responsive end  */

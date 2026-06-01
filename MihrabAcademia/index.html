@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      rel="stylesheet" href="style.css">
+
+    <script src="js/script.js"></script>
+    <title>Mihrab Akademi</title>
+    <link rel="stylesheet" href="styles/style.css" />
+
+  </head>
+  <body>
+
+    <!--! header section start  -->
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/sohbet2.jpg" alt="logo" />
+      </a>
+      <nav class="navbar">
+        <a href="index.html" class="active">Anasayfa</a>
+        <a href="hakkında.html">Hakkımızda</a>
+        <a href="etkinlikler.html">Etkinlikler</a>
+        <a href="eğitimler.html">Eğitimler</a>
+        <a href="güncel.html">Güncel</a>
+        <a href="bloglar.html">Bloglar</a>
+      </nav>
+
+      <div class="buttons">
+        <button id="search-btn" onclick="toggleSearchForm()">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="search-form" id="search-form">
+        <input
+          type="text"
+          class="search-input"
+          id="search-box"
+          placeholder="Search here" />
+        <button onclick="searchFunction()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </header>
+    <!--! header section end  -->
+
+    <!--! home section start  -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Mihrab Akademi</h3>
+        <p><b>Ayak izlerinin çokluğu bizi korkutmasın! Bizi beraber kuralım.
+        </b></p>
+      </div>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <img src="images/akademi.jpg" class="slide" alt="Resim 1">
+            <img src="images/mimi.jpg" class="slide" alt="Resim 2">
+            <img src="images/muhit.jpg" class="slide" alt="Resim 3">
+            <img src="images/kizlar.jpg" class="slide" alt="Resim 4">
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--! home section end  -->
+
+    <!--! Gündem section start  -->
+    <section class="gundem" id="gundem">
+      <h1 class="heading">GÜNDEM</h1>
+      <div class="haber">
+        <div class="galeri">
+          <img src="images/ramazab2.jpg">
+          <img src="images/ifta.jpg">
+          <img src="images/ate.jpg">
+          <img src="images/kuşcAami2.jpg">
+        </div>
+    
+        <button class="prev" onclick="changeSlide(-1)">‹</button>
+        <button class="next" onclick="changeSlide(1)">›</button>
+      </div>
+    </section>
+    <!--! gundem section end  -->
+
+    <!--! eğitimler section start  -->
+    <section class="egitim" id="egitim">
+      <h1 class="heading">EĞİTİMLER</h1>
+      <div class="box-container">
+        <div class="box">
+          <div class="box-head">
+            <img src="images/kitaplık.jpg" alt="kitaplık" />
+            <h3>Usûl Kitapları</h3>
+            <div><p style="font-size: 17px;"> *Emsile<br> *Avâmil<br>
+                *Cürcani<br>
+                <span class="dots"> ...</span>
+                <span class="moreText"> *Bina <br> *İzzi<br>
+                  *Birgevi</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Usul.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/ayet.jpg" alt="ayet" />
+            <h3>Arapça</h3>
+            <div><p style="font-size: 17px;"> * Modern Arapça<br> *Klasik
+                Arapça<br> *Arapça Grammer<br><span class="dots"> ...</span>
+                <span class="moreText"> *Îrab Dersleri</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Arapça.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/ilimler.jpg" alt="ders" />
+            <h3>İslami İlimler</h3>
+            <div> <p style="font-size: 17px;"> *Hadis okumaları<br> *Fıkıh
+                (Hanefi- Şâfi)<br> *Nesefi Akâidi<br><span class="dots">
+                  ...</span>
+                <span class="moreText"> *Asr-ı Saadetten Günümüze Siyer
+                  Okumaları<br>*Tefsir Okumaları + Kırık Meal<br>
+                  *Talimü'l-Müteallim(İslam Ahlakı)<br> *Tarihe Yön Veren
+                  Şahsiyetler</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="islamilimler.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <img src="images/hat.jpg" alt="hat" />
+            <h3>Kur'ân-ı Kerîm</h3>
+            <div><p style="font-size: 17px;"> *Sûre Ezberi<br> *Okuma<br>
+                *Tecvid Kuralları<br><span class="dots"> ...</span>
+                <span class="moreText"> *Mahrec Dersleri</span></p></div>
+          </div>
+          <div class="box-bottom">
+            <a href="Kuran.html" class="btn">Daha fazlasını gör</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--! eğitim section end  -->
+
+    <!--! etkinlik section start  -->
+    <section class="past-events">
+      <h1 class="heading">ETKİNLİKLER</h1>
+      <div class="event-cards">
+        <!-- Etkinlik 1: Mîm-i Muhit Buluşması -->
+        <div class="event-card">
+          <div class="event-img">
+            <!-- Birinci Fotoğraf -->
+            <img src="images/pencere.jpg" alt="Mîm-i Muhit Buluşması" />
+          </div>
+          <div class="event-details">
+            <h3>Mîm-i Muhit Buluşması</h3>
+            <p>Etkinlik hakkında kısa açıklama...</p>
+          </div>
+        </div>
+        <!-- Etkinlik 2: Kitap Tahlili -->
+        <div class="event-card">
+          <div class="event-img">
+            <!-- Birinci Fotoğraf -->
+            <img src="images/anasayfa.jpg" alt="Kitap Tahlili" />
+          </div>
+          <div class="event-details">
+            <h3>Kitap Tahlili</h3>
+            <p>Etkinlik hakkında kısa açıklama...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! etkinlik section end  -->
+
+    <!--! about section start  -->
+    <section class="hakkımızda" id="hakkımızda">
+      <h1 class="heading">HAKKIMIZDA</h1>
+      <div class="row">
+        <div class="content">
+          <h3>Mihrab Akademi Nedir? Kimdir? Amacı Nedir?
+            <p>
+              Mihrab Akademi Nedir?
+              <br>Mihrab Akademi, üniversite öğrencilerine yönelik İslami
+              ilimler alanında eğitim veren bir sivil toplum kuruluşudur.
+              Akademimiz, ilmi derinlik ve manevi gelişimi
+              bir araya getirerek öğrencilerin hem bilgi sahibi olmalarını hem
+              de bu bilgiyi hayatlarına yansıtmalarını amaçlar. Eğitim
+              programlarımız, sahih kaynaklara dayalı, nitelikli ve donanımlı
+              bir şekilde hazırlanmakta; öğrencilerimize İslam’ın temel
+              esaslarını, ahlaki...
+            </p>
+            <a href="hakkında.html" class="btn">Devamını Oku</a>
+          </div>
+        </div>
+
+      </section>
+      <!--! about section end  -->
+
+      <!--! blogs section start  -->
+      <section class="blogs" id="blogs">
+        <h1 class="heading">Bloglar</h1>
+        <div class="blog-item">
+          <div class="blog-image-wrapper">
+            <img src="images/günışığı.jpg" alt="Blog Fotoğrafı"
+              class="blog-image">
+          </div>
+          <div class="blog-details">
+            <h2 class="blog-title">Dâru'l - Erkam</h2>
+            <p class="blog-summary">Mekke'nin karanlık sokakları arasında
+              Rasulullah (sav)
+              Onu görsün, onu sevsin ve ona sığınsın için çabalayan
+              küçük bir çocuk kadar masum bir ev;
+              Sahabenin hirası...</p>
+            <a href="https://biizdusu.blogspot.com" class="btn">Devamını Gör</a>
+          </div>
+        </div>
+        <div class="blog-item">
+          <div class="blog-image-wrapper">
+            <img src="images/lamba.jpg" alt="Blog Fotoğrafı" class="blog-image">
+          </div>
+          <div class="blog-details">
+            <h2 class="blog-title">Arayış</h2>
+            <p class="blog-summary">Bugün bir soru etrafında durdum.
+              Onun miktarını da bu tutarda tabi tuttum. Onu öğrenmiş olmam veya
+              problemin devam ettiği gibi çalışılmıştı... </p>
+            <a href="https://biizdusu.blogspot.com" class="btn">Devamını Gör</a>
+          </div>
+        </div>
+        <div>
+          <a href="bloglar.html" class="btn">Daha fazlasını gör</a>
+        </div>
+      </section>
+      <!--! blogs section end  -->
+
+      <!--! footer section start  -->
+      <section class="footer">
+        <div class="share">
+          <a href="https://www.twitter.com/bizdusu" class="fab fa-twitter"></a>
+          <a href="https://www.instagram.com/bizdusu" class="fab fa-instagram"></a>
+          <a href="mihrabmedresesi@gmail.com" class="fab fa-en"></a>
+          <a href class="fab fa-pinterest"></a>
+        </div>
+        <div class="credit">
+          Mihrab Akademi | 2019-2025<br>mihrabakademi.com altında yayınlanan
+          yazıların tüm hakları saklıdır.
+        </div>
+      </section>
+      <!--! footer section end  -->
+
+      <script src="js/script.js"></script>
+    </body>
+  </html>
+=======
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuaför Otomasyon Projesi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Kuaför Otomasyon Sistemi</h1>
+  </header>
+
+ <section class="project-description">
+  <h2>Proje Amacı</h2>
+  <p>
+    Bu projenin amacı, kuaför salonlarında çalışanların ve müşterilerin maruz kaldığı hava kalitesini ölçmek 
+    ve salon içi havalandırma sistemlerini otomatik olarak yönetebilmektir. Böylece, salon içerisindeki 
+    aktif gaz seviyeleri, sıcaklık ve nem değerleri sürekli olarak takip edilerek, sağlıklı bir ortam 
+    sağlanması hedeflenmiştir.
+  </p>
+
+  <h2>Proje Hedefleri</h2>
+  <ul>
+    <li>Kuaför salonlarında hava kalitesini anlık olarak ölçmek.</li>
+    <li>Isı ve nem değerlerini takip ederek uygun ortam koşullarını sağlamak.</li>
+    <li>Arduino tabanlı bir sistem ile sensör verilerini i2C LCD ekrana yansıtmak.</li>
+    <li>Geliştirilen sistemi farklı denemeler ile test edip doğruluğunu teyit etmek.</li>
+    <li>Projeyi ileride diğer mekanlara uygulanabilir bir prototip haline getirmek.</li>
+  </ul>
+
+  <h2>Projenin İşleyişi</h2>
+  <p>
+    Sistem, Arduino Nano mikrodenetleyici ile MQ-135 hava kalitesi sensörü ve DHT11 sıcaklık & nem sensörü 
+    kullanılarak kurulmuştur. Sensörlerden alınan veriler, Arduino üzerinde işlenerek i2C LCD ekrana 
+    aktarılmıştır. Sistemin kurulumu sırasında sensör bağlantıları dikkatle yapılmış ve kablo renk kodlaması 
+    ile hatasız bağlantı sağlanmıştır.
+  </p>
+  <p>
+    İlk aşamada yalnızca MQ-135 sensörü ile aktif gaz ölçümü yapılmış, ardından DHT11 sensörü entegre edilerek 
+    sıcaklık ve nem ölçümleri eklenmiştir. LCD ekranda tüm bilgilerin doğru şekilde görüntülenebilmesi 
+    için veri formatları ve sayılar optimize edilmiştir. Farklı test denemeleri gerçekleştirilmiş ve her 
+    bir sensörden alınan değerlerin doğruluğu onaylanmıştır.
+  </p>
+  <p>
+    Proje sürecinde, grup ile birlikte akış şeması hazırlanmış ve sistemin mantıksal işleyişi adım adım 
+    planlanmıştır. Sensörlerin çalışma prensipleri öğrenilmiş, sistemin testleri yapılmış ve proje sonunda 
+    kullanıcıların gözlemleyebileceği bir prototip ortaya çıkarılmıştır.
+  </p>
+
+  <h2>Proje Sonuçları</h2>
+  <p>
+    Yapılan testler sonucunda, MQ-135 sensörü ile aktif gaz ölçümleri %100 doğrulukla alınabilmiş, 
+    DHT11 sensörü ile sıcaklık ve nem ölçümleri de ekran üzerinde doğru şekilde görüntülenmiştir. 
+    Böylece proje, kuaför salonları için uygulanabilir bir hava kalite izleme ve otomatik havalandırma 
+    prototipi olarak başarılı bir şekilde tamamlanmıştır.
+  </p>
+</section>
+
+
+  <section class="project-images">
+    <h2>Proje Görselleri</h2>
+    <img src="images/foto1.jpg" alt="Kuaför Proje Fotoğraf 1">
+    <img src="images/foto2.jpg" alt="Kuaför Proje Fotoğraf 2">
+    <img src="images/foto3.jpg" alt="Kuaför Proje Fotoğraf 2">
+    <img src="images/foto4.jpg" alt="Kuaför Proje Fotoğraf 2">
+
+  </section>
+
+</body>
+</html>
+>>>>>>> 582d8f80a4406568aa46058e7724b9f4e0aad00e
