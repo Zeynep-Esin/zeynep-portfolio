@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuaför Otomasyon Projesi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Kuaför Otomasyon Sistemi</h1>
+  </header>
+
+  <section class="project-description">
+  <h2>Proje Amacı</h2>
+  <p>
+    Bu projenin amacı, kuaför salonlarında çalışanların ve müşterilerin maruz kaldığı hava kalitesini ölçmek 
+    ve salon içi havalandırma sistemlerini otomatik olarak yönetebilmektir. Böylece, salon içerisindeki 
+    aktif gaz seviyeleri, sıcaklık ve nem değerleri sürekli olarak takip edilerek, sağlıklı bir ortam 
+    sağlanması hedeflenmiştir.
+  </p>
+
+  <h2>Proje Hedefleri</h2>
+  <ul>
+    <li>Kuaför salonlarında hava kalitesini anlık olarak ölçmek.</li>
+    <li>Isı ve nem değerlerini takip ederek uygun ortam koşullarını sağlamak.</li>
+    <li>Arduino tabanlı bir sistem ile sensör verilerini i2C LCD ekrana yansıtmak.</li>
+    <li>Geliştirilen sistemi farklı denemeler ile test edip doğruluğunu teyit etmek.</li>
+    <li>Projeyi ileride diğer mekanlara uygulanabilir bir prototip haline getirmek.</li>
+  </ul>
+
+  <h2>Projenin İşleyişi</h2>
+  <p>
+    Sistem, Arduino Nano mikrodenetleyici ile MQ-135 hava kalitesi sensörü ve DHT11 sıcaklık & nem sensörü 
+    kullanılarak kurulmuştur. Sensörlerden alınan veriler, Arduino üzerinde işlenerek i2C LCD ekrana 
+    aktarılmıştır. Sistemin kurulumu sırasında sensör bağlantıları dikkatle yapılmış ve kablo renk kodlaması 
+    ile hatasız bağlantı sağlanmıştır.
+  </p>
+  <p>
+    İlk aşamada yalnızca MQ-135 sensörü ile aktif gaz ölçümü yapılmış, ardından DHT11 sensörü entegre edilerek 
+    sıcaklık ve nem ölçümleri eklenmiştir. LCD ekranda tüm bilgilerin doğru şekilde görüntülenebilmesi 
+    için veri formatları ve sayılar optimize edilmiştir. Farklı test denemeleri gerçekleştirilmiş ve her 
+    bir sensörden alınan değerlerin doğruluğu onaylanmıştır.
+  </p>
+  <p>
+    Proje sürecinde, grup ile birlikte akış şeması hazırlanmış ve sistemin mantıksal işleyişi adım adım 
+    planlanmıştır. Sensörlerin çalışma prensipleri öğrenilmiş, sistemin testleri yapılmış ve proje sonunda 
+    kullanıcıların gözlemleyebileceği bir prototip ortaya çıkarılmıştır.
+  </p>
+
+  <h2>Proje Sonuçları</h2>
+  <p>
+    Yapılan testler sonucunda, MQ-135 sensörü ile aktif gaz ölçümleri %100 doğrulukla alınabilmiş, 
+    DHT11 sensörü ile sıcaklık ve nem ölçümleri de ekran üzerinde doğru şekilde görüntülenmiştir. 
+    Böylece proje, kuaför salonları için uygulanabilir bir hava kalite izleme ve otomatik havalandırma 
+    prototipi olarak başarılı bir şekilde tamamlanmıştır.
+  </p>
+</section>
+
+
+  <section class="project-images">
+    <h2>Proje Görselleri</h2>
+    <img src="images/foto1.jpg" alt="Kuaför Proje Fotoğraf 1">
+    <img src="images/foto2.jpg" alt="Kuaför Proje Fotoğraf 2">
+    <img src="images/foto3.jpg" alt="Kuaför Proje Fotoğraf 2">
+    <img src="images/foto4.jpg" alt="Kuaför Proje Fotoğraf 2">
+
+  </section>
+
+</body>
+</html>
